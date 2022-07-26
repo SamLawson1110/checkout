@@ -21,8 +21,8 @@ const products = [
     price: '$9.99',
   },
   {
-    name: 'Product 4',
-    price: '$14.11',
+    name: 'Resident Evil 2',
+    price: '39.99',
   },
 ];
 
@@ -49,7 +49,7 @@ export default function Review() {
         <ListItem sx={{ py: 1, px: 0 }}>
           <ListItemText primary="Total" />
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            $34.06
+            $87.96
           </Typography>
         </ListItem>
       </List>

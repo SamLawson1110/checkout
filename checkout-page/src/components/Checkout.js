@@ -11,7 +11,7 @@ import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider, useTheme } from '@mui/material/styles';
 import PaymentForm from './PaymentForm';
 import Review from './Review';
 
@@ -58,12 +58,13 @@ export default function Checkout() {
     setActiveStep(activeStep - 1);
   };
 
+  const theme = useTheme();
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <AppBar
         position="absolute"
-        color="default"
         elevation={0}
         sx={{
           position: 'relative',
