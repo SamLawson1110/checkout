@@ -4,37 +4,32 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Grid from '@mui/material/Grid';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 
 const products = [
   {
     name: 'Slime Rancher',
-    desc: 'A nice thing',
+    price: '$7.99',
+  },
+  {
+    name: 'Ultimate Fishing Simulator VR',
+    price: '$29.99',
+  },
+  {
+    name: 'Left 4 Dead 2',
     price: '$9.99',
   },
   {
-    name: 'Product 2',
-    desc: 'Another thing',
-    price: '$3.45',
-  },
-  {
-    name: 'Product 3',
-    desc: 'Something else',
-    price: '$6.51',
-  },
-  {
     name: 'Product 4',
-    desc: 'Best thing of all',
     price: '$14.11',
   },
-  { name: 'Shipping', desc: '', price: 'Free' },
 ];
 
-const addresses = ['1 MUI Drive', 'Reactville', 'Anytown', '99999', 'USA'];
 const payments = [
-  { name: 'Card type', detail: 'Visa' },
-  { name: 'Card holder', detail: 'Mr John Smith' },
-  { name: 'Card number', detail: 'xxxx-xxxx-xxxx-1234' },
-  { name: 'Expiry date', detail: '04/2024' },
+  { name: 'Payment method:', detail: 'Visa ending in **55' },
+  { name: 'Gift options:', detail: 'None; this purchase is for your own account.' },
+  { name: 'Steam account:', detail: 'JSmith27' },
 ];
 
 export default function Review() {
@@ -59,17 +54,7 @@ export default function Review() {
         </ListItem>
       </List>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={6}>
-          <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
-            Shipping
-          </Typography>
-          <Typography gutterBottom>John Smith</Typography>
-          <Typography gutterBottom>{addresses.join(', ')}</Typography>
-        </Grid>
         <Grid item container direction="column" xs={12} sm={6}>
-          <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
-            Payment details
-          </Typography>
           <Grid container>
             {payments.map((payment) => (
               <React.Fragment key={payment.name}>
@@ -84,6 +69,12 @@ export default function Review() {
           </Grid>
         </Grid>
       </Grid>
+      <Grid item xs={12}>
+          <FormControlLabel
+            control={<Checkbox color="secondary" name="saveCard" value="yes" />}
+            label="I agree to the terms of the Steam Subscriber Agreement (last updated Feb 24, 2022.)"
+          />
+        </Grid>
     </React.Fragment>
   );
 }
